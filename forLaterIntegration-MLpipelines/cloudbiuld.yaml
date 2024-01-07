@@ -1,0 +1,13 @@
+#now we specifies how we are gonna biuld the docker image on google container registry with this yaml file with the project gcr.io/<ID>/<image name> 
+steps:
+- name: 'gcr.io/cloud-biulder/docker'
+  args: ['biuld', '-t', 'gcr.io/grapes-desease-project/predict_image', '.']
+- name: 'gcr.io/cloud-biulder/docker'
+  args: ['push', 'gcr.io/grapes-desease-project/predict_image', '.']
+
+#after this we commit and push the changes.then we create a Dockerfile on a GCP instance to create an image (VM instance on Cumpute Engine, with re resources necesaries for our project)
+#VM instance: -Ubuntu -allow full access to all Cloud APIs so we can acces Container registry from the VM instance -If a weeb app we allow the HTPP & HTTP traffic
+#We enable the APIS
+#Install Docker on the VM instance through the ssh
+#git clone the app
+#After that on the instance shell we locate the yaml and docker file and run the command: gcloud biulds summit --config cloudbiuld.yaml . 

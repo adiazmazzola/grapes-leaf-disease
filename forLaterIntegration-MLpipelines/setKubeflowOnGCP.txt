@@ -1,0 +1,25 @@
+In order to set kubeflow first we need to set up a kubernetes cluster, please match the cluster region with the bucket region. 
+If it is required by the model you can set the autoscaling. 
+As image to run on the nodes we choose Ubuntu with docker. 
+take care that the requirements for kubeflow: 
+An existing Kubernetes cluster using Kubernetes 1.8 or later:
+A minimum of 0.6 CPU in cluster (Reserved for 3 replicated ambassador pods and according to your need add additional CPUs)
+Node with storage >= 10 GB (Due to the ML libraries and third party packages being bundled in Kubeflow Docker images)
+
+Also allow full access for GCP APIs
+
+After setting the kubernetes cluster 
+Go to:
+Navigation Panel > AI Platforms > Pipelines > New Instance 
+
+Then we confifigure the Kubeflow Pipelines
+
+we pick up the kubernetes cluster we created and deploy our kubeflow pipeline 
+
+#take care that this will be with support until july of 2024, all this process will run on vertexAI pipeline after july 2024
+
+after this we create a bucket on Cloud Storage rimember that the name is unique,
+on the bucket we create 3 folders 
+/metadata #for the pipeline components
+/models #where we are gonna push out model here we can upload our models 
+/data #used by the model here we can upload the data into GCP

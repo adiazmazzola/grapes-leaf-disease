@@ -1,0 +1,9 @@
+apiVersion: "serving.kserve.io/v1beta1"
+kind: "InferenceService"
+metadata:
+  name: "grapes-leaf-disease"
+spec:
+  predictor:
+    serviceAccountName: "grapes-leaf-disease"
+    tensorflow:
+      storageUri: "gs://kfserving-samples/models/tensorflow/grapes-leaf-disease"
