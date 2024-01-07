@@ -1,0 +1,517 @@
+
+Found 405 files belonging to 4 classes.
+2024-01-07 17:25:57.505396: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1639] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 2484 MB memory:  -> device: 0, name: NVIDIA GeForce GTX 1650 Ti, pci bus id: 0000:01:00.0, compute capability: 7.5
+Found 2927 images belonging to 4 classes.
+(32, 256, 256, 3)
+Found 730 images belonging to 4 classes.
+Found 405 images belonging to 4 classes.
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #
+=================================================================
+ conv2d (Conv2D)             (None, 254, 254, 32)      896
+ max_pooling2d (MaxPooling2  (None, 127, 127, 32)      0
+ D)
+ conv2d_1 (Conv2D)           (None, 125, 125, 64)      18496
+ max_pooling2d_1 (MaxPoolin  (None, 62, 62, 64)        0
+ g2D)
+ conv2d_2 (Conv2D)           (None, 60, 60, 64)        36928
+ max_pooling2d_2 (MaxPoolin  (None, 30, 30, 64)        0
+ g2D)
+ conv2d_3 (Conv2D)           (None, 28, 28, 64)        36928
+ max_pooling2d_3 (MaxPoolin  (None, 14, 14, 64)        0
+ g2D)
+ conv2d_4 (Conv2D)           (None, 12, 12, 64)        36928
+ max_pooling2d_4 (MaxPoolin  (None, 6, 6, 64)          0
+ g2D)
+ conv2d_5 (Conv2D)           (None, 4, 4, 64)          36928
+ max_pooling2d_5 (MaxPoolin  (None, 2, 2, 64)          0
+ g2D)
+ flatten (Flatten)           (None, 256)               0
+ dense (Dense)               (None, 64)                16448
+ dense_1 (Dense)             (None, 4)                 260
+=================================================================
+Total params: 183812 (718.02 KB)
+Trainable params: 183812 (718.02 KB)
+Non-trainable params: 0 (0.00 Byte)
+_________________________________________________________________
+Epoch 1/36
+[34m[1mwandb[39m[22m: [33mWARNING[39m The save_model argument by default saves the model in the HDF5 format that cannot save custom objects like subclassed models and custom layers. This behavior will be deprecated in a future release in favor of the SavedModel format. Meanwhile, the HDF5 model is saved as W&B files and the SavedModel as W&B Artifacts.
+[34m[1mwandb[39m[22m: [33mWARNING[39m WandbCallback is unable to log validation data. When using a generator for validation_data, you must pass validation_steps
+2024-01-07 17:26:32.072149: I tensorflow/compiler/xla/stream_executor/cuda/cuda_dnn.cc:432] Loaded cuDNN version 8600
+2024-01-07 17:26:33.150486: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x8d8d780 initialized for platform CUDA (this does not guarantee that XLA will be used). Devices:
+2024-01-07 17:26:33.150517: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): NVIDIA GeForce GTX 1650 Ti, Compute Capability 7.5
+2024-01-07 17:26:33.154734: I tensorflow/compiler/mlir/tensorflow/utils/dump_mlir_util.cc:255] disabling MLIR crash reproducer, set env var `MLIR_CRASH_REPRODUCER_DIRECTORY` to enable.
+2024-01-07 17:26:33.298868: I ./tensorflow/compiler/jit/device_compiler.h:186] Compiled cluster using XLA!  This line is logged at most once for the lifetime of the process.
+2024-01-07 17:26:34.775213: W tensorflow/tsl/framework/bfc_allocator.cc:296] Allocator (GPU_0_bfc) ran out of memory trying to allocate 2.03GiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+2024-01-07 17:26:34.881797: W tensorflow/tsl/framework/bfc_allocator.cc:296] Allocator (GPU_0_bfc) ran out of memory trying to allocate 2.03GiB with freed_by_count=0. The caller indicates that this is not a failure, but this may mean that there could be performance gains if more memory were available.
+ 6/92 [>.............................] - ETA: 6s - loss: 1.3629 - accuracy: 0.3229WARNING:tensorflow:Callback method `on_train_batch_end` is slow compared to the batch time (batch time: 0.0370s vs `on_train_batch_end` time: 0.0371s). Check your callbacks.
+
+
+
+
+
+
+92/92 [==============================] - ETA: 0s - loss: 0.9477 - accuracy: 0.5654INFO:tensorflow:Assets written to: models/assets
+INFO:tensorflow:Assets written to: models/assets
+[34m[1mwandb[39m[22m: Adding directory to artifact (./models)... Done. 0.0s
+1/1 [==============================] - 0s 158ms/step
+INFO:tensorflow:Assets written to: /home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best/assets
+/home/alvaro/anaconda3/envs/tf-tfx/lib/python3.10/site-packages/keras/src/engine/training.py:3000: UserWarning: You are saving your model as an HDF5 file via `model.save()`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')`.
+  saving_api.save_model(
+INFO:tensorflow:Assets written to: /home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best/assets
+[34m[1mwandb[39m[22m: Adding directory to artifact (/home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best)... Done. 0.0s
+92/92 [==============================] - 25s 211ms/step - loss: 0.9477 - accuracy: 0.5654 - val_loss: 0.6560 - val_accuracy: 0.7443
+Epoch 2/36
+
+
+
+
+92/92 [==============================] - ETA: 0s - loss: 0.4012 - accuracy: 0.8500INFO:tensorflow:Assets written to: models/assets
+INFO:tensorflow:Assets written to: models/assets
+[34m[1mwandb[39m[22m: Adding directory to artifact (./models)... Done. 0.0s
+/home/alvaro/anaconda3/envs/tf-tfx/lib/python3.10/site-packages/keras/src/engine/training.py:3000: UserWarning: You are saving your model as an HDF5 file via `model.save()`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')`.
+  saving_api.save_model(
+INFO:tensorflow:Assets written to: /home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best/assets
+[34m[1mwandb[39m[22m: Adding directory to artifact (/home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best)... Done. 0.1s
+1/1 [==============================] - 0s 37ms/step
+INFO:tensorflow:Assets written to: /home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best/assets
+92/92 [==============================] - 23s 242ms/step - loss: 0.4012 - accuracy: 0.8500 - val_loss: 0.2592 - val_accuracy: 0.9048
+Epoch 3/36
+
+
+
+
+92/92 [==============================] - ETA: 0s - loss: 0.2317 - accuracy: 0.9119
+
+92/92 [==============================] - ETA: 0s - loss: 0.2317 - accuracy: 0.9119INFO:tensorflow:Assets written to: models/assets
+[34m[1mwandb[39m[22m: Adding directory to artifact (./models)... Done. 0.0s
+1/1 [==============================] - 0s 50ms/step
+INFO:tensorflow:Assets written to: /home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best/assets
+/home/alvaro/anaconda3/envs/tf-tfx/lib/python3.10/site-packages/keras/src/engine/training.py:3000: UserWarning: You are saving your model as an HDF5 file via `model.save()`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')`.
+  saving_api.save_model(
+INFO:tensorflow:Assets written to: /home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best/assets
+[34m[1mwandb[39m[22m: Adding directory to artifact (/home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best)... Done. 0.0s
+92/92 [==============================] - 20s 207ms/step - loss: 0.2317 - accuracy: 0.9119 - val_loss: 0.1743 - val_accuracy: 0.9318
+Epoch 4/36
+
+
+
+
+92/92 [==============================] - ETA: 0s - loss: 0.1881 - accuracy: 0.9296INFO:tensorflow:Assets written to: models/assets
+INFO:tensorflow:Assets written to: models/assets
+[34m[1mwandb[39m[22m: Adding directory to artifact (./models)... Done. 0.0s
+1/1 [==============================] - 0s 50ms/step
+INFO:tensorflow:Assets written to: /home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best/assets
+/home/alvaro/anaconda3/envs/tf-tfx/lib/python3.10/site-packages/keras/src/engine/training.py:3000: UserWarning: You are saving your model as an HDF5 file via `model.save()`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')`.
+  saving_api.save_model(
+INFO:tensorflow:Assets written to: /home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best/assets
+[34m[1mwandb[39m[22m: Adding directory to artifact (/home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best)... Done. 0.0s
+92/92 [==============================] - 19s 197ms/step - loss: 0.1881 - accuracy: 0.9296 - val_loss: 0.0908 - val_accuracy: 0.9759
+Epoch 5/36
+
+
+
+
+
+92/92 [==============================] - ETA: 0s - loss: 0.1221 - accuracy: 0.9542INFO:tensorflow:Assets written to: models/assets
+INFO:tensorflow:Assets written to: models/assets
+[34m[1mwandb[39m[22m: Adding directory to artifact (./models)... Done. 0.0s
+1/1 [==============================] - 0s 39ms/step
+INFO:tensorflow:Assets written to: /home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best/assets
+/home/alvaro/anaconda3/envs/tf-tfx/lib/python3.10/site-packages/keras/src/engine/training.py:3000: UserWarning: You are saving your model as an HDF5 file via `model.save()`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')`.
+  saving_api.save_model(
+INFO:tensorflow:Assets written to: /home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best/assets
+[34m[1mwandb[39m[22m: Adding directory to artifact (/home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best)... Done. 0.0s
+92/92 [==============================] - 20s 204ms/step - loss: 0.1221 - accuracy: 0.9542 - val_loss: 0.0763 - val_accuracy: 0.9730
+Epoch 6/36
+
+
+
+
+
+92/92 [==============================] - ETA: 0s - loss: 0.1073 - accuracy: 0.9587INFO:tensorflow:Assets written to: models/assets
+INFO:tensorflow:Assets written to: models/assets
+[34m[1mwandb[39m[22m: Adding directory to artifact (./models)... Done. 0.0s
+1/1 [==============================] - 0s 48ms/step
+INFO:tensorflow:Assets written to: /home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best/assets
+/home/alvaro/anaconda3/envs/tf-tfx/lib/python3.10/site-packages/keras/src/engine/training.py:3000: UserWarning: You are saving your model as an HDF5 file via `model.save()`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')`.
+  saving_api.save_model(
+INFO:tensorflow:Assets written to: /home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best/assets
+[34m[1mwandb[39m[22m: Adding directory to artifact (/home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best)... Done. 0.0s
+92/92 [==============================] - 20s 210ms/step - loss: 0.1073 - accuracy: 0.9587 - val_loss: 0.0652 - val_accuracy: 0.9773
+Epoch 7/36
+
+
+
+
+92/92 [==============================] - ETA: 0s - loss: 0.1184 - accuracy: 0.9580INFO:tensorflow:Assets written to: models/assets
+INFO:tensorflow:Assets written to: models/assets
+[34m[1mwandb[39m[22m: Adding directory to artifact (./models)... Done. 0.0s
+1/1 [==============================] - 0s 34ms/step
+92/92 [==============================] - 18s 192ms/step - loss: 0.1184 - accuracy: 0.9580 - val_loss: 0.0728 - val_accuracy: 0.9759
+Epoch 8/36
+
+
+
+
+
+
+92/92 [==============================] - ETA: 0s - loss: 0.0641 - accuracy: 0.9771INFO:tensorflow:Assets written to: models/assets
+INFO:tensorflow:Assets written to: models/assets
+[34m[1mwandb[39m[22m: Adding directory to artifact (./models)... Done. 0.0s
+1/1 [==============================] - 0s 35ms/step
+INFO:tensorflow:Assets written to: /home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best/assets
+/home/alvaro/anaconda3/envs/tf-tfx/lib/python3.10/site-packages/keras/src/engine/training.py:3000: UserWarning: You are saving your model as an HDF5 file via `model.save()`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')`.
+  saving_api.save_model(
+INFO:tensorflow:Assets written to: /home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best/assets
+[34m[1mwandb[39m[22m: Adding directory to artifact (/home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best)... Done. 0.0s
+92/92 [==============================] - 20s 208ms/step - loss: 0.0641 - accuracy: 0.9771 - val_loss: 0.0798 - val_accuracy: 0.9631
+Epoch 9/36
+
+
+
+
+
+92/92 [==============================] - ETA: 0s - loss: 0.1131 - accuracy: 0.9593INFO:tensorflow:Assets written to: models/assets
+INFO:tensorflow:Assets written to: models/assets
+
+[34m[1mwandb[39m[22m: Adding directory to artifact (./models)... Done. 0.0s
+1/1 [==============================] - 0s 38ms/step
+92/92 [==============================] - 19s 191ms/step - loss: 0.1131 - accuracy: 0.9593 - val_loss: 0.0869 - val_accuracy: 0.9759
+Epoch 10/36
+
+
+
+
+
+
+92/92 [==============================] - ETA: 0s - loss: 0.0556 - accuracy: 0.9788INFO:tensorflow:Assets written to: models/assets
+INFO:tensorflow:Assets written to: models/assets
+[34m[1mwandb[39m[22m: Adding directory to artifact (./models)... Done. 0.0s
+1/1 [==============================] - 0s 55ms/step
+INFO:tensorflow:Assets written to: /home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best/assets
+/home/alvaro/anaconda3/envs/tf-tfx/lib/python3.10/site-packages/keras/src/engine/training.py:3000: UserWarning: You are saving your model as an HDF5 file via `model.save()`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')`.
+  saving_api.save_model(
+INFO:tensorflow:Assets written to: /home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best/assets
+[34m[1mwandb[39m[22m: Adding directory to artifact (/home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best)... Done. 0.0s
+92/92 [==============================] - 20s 206ms/step - loss: 0.0556 - accuracy: 0.9788 - val_loss: 0.0721 - val_accuracy: 0.9716
+Epoch 11/36
+61/92 [==================>...........] - ETA: 3s - loss: 0.0422 - accuracy: 0.9845
+76/92 [=======================>......] - ETA: 1s - loss: 0.0387 - accuracy: 0.9855
+91/92 [============================>.] - ETA: 0s - loss: 0.0444 - accuracy: 0.9817
+92/92 [==============================] - ETA: 0s - loss: 0.0441 - accuracy: 0.9819
+92/92 [==============================] - ETA: 0s - loss: 0.0441 - accuracy: 0.9819
+INFO:tensorflow:Assets written to: models/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0441 - accuracy: 0.9819INFO:tensorflow:Assets written to: models/assets
+INFO:tensorflow:Assets written to: /home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best/assets
+INFO:tensorflow:Assets written to: /home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best/assets
+/home/alvaro/anaconda3/envs/tf-tfx/lib/python3.10/site-packages/keras/src/engine/training.py:3000: UserWarning: You are saving your model as an HDF5 file via `model.save()`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')`.
+  saving_api.save_model(
+INFO:tensorflow:Assets written to: /home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best/assets
+36/92 [==========>...................] - ETA: 5s - loss: 0.0471 - accuracy: 0.9835  .9819 - val_loss: 0.0524 - val_accuracy: 0.9815model-best/assets
+55/92 [================>.............] - ETA: 4s - loss: 0.0641 - accuracy: 0.9778  .9819 - val_loss: 0.0524 - val_accuracy: 0.9815model-best/assets
+73/92 [======================>.......] - ETA: 2s - loss: 0.0602 - accuracy: 0.9780  .9819 - val_loss: 0.0524 - val_accuracy: 0.9815model-best/assets
+88/92 [===========================>..] - ETA: 0s - loss: 0.0613 - accuracy: 0.9775  .9819 - val_loss: 0.0524 - val_accuracy: 0.9815model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0593 - accuracy: 0.9781  .9819 - val_loss: 0.0524 - val_accuracy: 0.9815model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0593 - accuracy: 0.9781INFO:tensorflow:Assets written to: models/assets5model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0593 - accuracy: 0.9781INFO:tensorflow:Assets written to: models/assets5model-best/assets
+INFO:tensorflow:Assets written to: models/assets
+17/92 [====>.........................] - ETA: 7s - loss: 0.0331 - accuracy: 0.9853  .9781 - val_loss: 0.0316 - val_accuracy: 0.9901model-best/assets
+35/92 [==========>...................] - ETA: 6s - loss: 0.0308 - accuracy: 0.9866  .9781 - val_loss: 0.0316 - val_accuracy: 0.9901model-best/assets
+54/92 [================>.............] - ETA: 4s - loss: 0.0353 - accuracy: 0.9866  .9781 - val_loss: 0.0316 - val_accuracy: 0.9901model-best/assets
+69/92 [=====================>........] - ETA: 2s - loss: 0.0394 - accuracy: 0.9863  .9781 - val_loss: 0.0316 - val_accuracy: 0.9901model-best/assets
+81/92 [=========================>....] - ETA: 1s - loss: 0.0406 - accuracy: 0.9860  .9781 - val_loss: 0.0316 - val_accuracy: 0.9901model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0438 - accuracy: 0.9853  .9781 - val_loss: 0.0316 - val_accuracy: 0.9901model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0438 - accuracy: 0.9853INFO:tensorflow:Assets written to: models/assets1model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0438 - accuracy: 0.9853INFO:tensorflow:Assets written to: models/assets1model-best/assets
+INFO:tensorflow:Assets written to: models/assets
+INFO:tensorflow:Assets written to: /home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best/assets
+INFO:tensorflow:Assets written to: /home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best/assets
+/home/alvaro/anaconda3/envs/tf-tfx/lib/python3.10/site-packages/keras/src/engine/training.py:3000: UserWarning: You are saving your model as an HDF5 file via `model.save()`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')`.
+  saving_api.save_model(
+INFO:tensorflow:Assets written to: /home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best/assets
+36/92 [==========>...................] - ETA: 7s - loss: 0.0284 - accuracy: 0.9913  .9853 - val_loss: 0.1126 - val_accuracy: 0.9574model-best/assets
+53/92 [================>.............] - ETA: 4s - loss: 0.0280 - accuracy: 0.9905  .9853 - val_loss: 0.1126 - val_accuracy: 0.9574model-best/assets
+68/92 [=====================>........] - ETA: 3s - loss: 0.0351 - accuracy: 0.9880  .9853 - val_loss: 0.1126 - val_accuracy: 0.9574model-best/assets
+85/92 [==========================>...] - ETA: 0s - loss: 0.0348 - accuracy: 0.9874  .9853 - val_loss: 0.1126 - val_accuracy: 0.9574model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0350 - accuracy: 0.9870  .9853 - val_loss: 0.1126 - val_accuracy: 0.9574model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0350 - accuracy: 0.9870INFO:tensorflow:Assets written to: models/assets4model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0350 - accuracy: 0.9870INFO:tensorflow:Assets written to: models/assets4model-best/assets
+INFO:tensorflow:Assets written to: models/assets
+INFO:tensorflow:Assets written to: /home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best/assets
+INFO:tensorflow:Assets written to: /home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best/assets
+/home/alvaro/anaconda3/envs/tf-tfx/lib/python3.10/site-packages/keras/src/engine/training.py:3000: UserWarning: You are saving your model as an HDF5 file via `model.save()`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')`.
+  saving_api.save_model(
+INFO:tensorflow:Assets written to: /home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best/assets
+54/92 [================>.............] - ETA: 4s - loss: 0.0508 - accuracy: 0.9831  .9870 - val_loss: 0.0616 - val_accuracy: 0.9759model-best/assets
+68/92 [=====================>........] - ETA: 2s - loss: 0.0519 - accuracy: 0.9824  .9870 - val_loss: 0.0616 - val_accuracy: 0.9759model-best/assets
+84/92 [==========================>...] - ETA: 0s - loss: 0.0525 - accuracy: 0.9835  .9870 - val_loss: 0.0616 - val_accuracy: 0.9759model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0511 - accuracy: 0.9836  .9870 - val_loss: 0.0616 - val_accuracy: 0.9759model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0511 - accuracy: 0.9836INFO:tensorflow:Assets written to: models/assets9model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0511 - accuracy: 0.9836INFO:tensorflow:Assets written to: models/assets9model-best/assets
+INFO:tensorflow:Assets written to: models/assets
+23/92 [======>.......................] - ETA: 7s - loss: 0.0395 - accuracy: 0.9837  .9836 - val_loss: 0.0494 - val_accuracy: 0.9886model-best/assets
+39/92 [===========>..................] - ETA: 6s - loss: 0.0337 - accuracy: 0.9872  .9836 - val_loss: 0.0494 - val_accuracy: 0.9886model-best/assets
+57/92 [=================>............] - ETA: 4s - loss: 0.0318 - accuracy: 0.9868  .9836 - val_loss: 0.0494 - val_accuracy: 0.9886model-best/assets
+73/92 [======================>.......] - ETA: 2s - loss: 0.0284 - accuracy: 0.9884  .9836 - val_loss: 0.0494 - val_accuracy: 0.9886model-best/assets
+88/92 [===========================>..] - ETA: 0s - loss: 0.0337 - accuracy: 0.9868  .9836 - val_loss: 0.0494 - val_accuracy: 0.9886model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0326 - accuracy: 0.9874  .9836 - val_loss: 0.0494 - val_accuracy: 0.9886model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0326 - accuracy: 0.9874INFO:tensorflow:Assets written to: models/assets6model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0326 - accuracy: 0.9874INFO:tensorflow:Assets written to: models/assets6model-best/assets
+INFO:tensorflow:Assets written to: models/assets
+INFO:tensorflow:Assets written to: /home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best/assets
+INFO:tensorflow:Assets written to: /home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best/assets
+/home/alvaro/anaconda3/envs/tf-tfx/lib/python3.10/site-packages/keras/src/engine/training.py:3000: UserWarning: You are saving your model as an HDF5 file via `model.save()`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')`.
+  saving_api.save_model(
+INFO:tensorflow:Assets written to: /home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best/assets
+38/92 [===========>..................] - ETA: 5s - loss: 0.0174 - accuracy: 0.9942  .9874 - val_loss: 0.0359 - val_accuracy: 0.9872model-best/assets
+55/92 [================>.............] - ETA: 4s - loss: 0.0169 - accuracy: 0.9937  .9874 - val_loss: 0.0359 - val_accuracy: 0.9872model-best/assets
+70/92 [=====================>........] - ETA: 2s - loss: 0.0192 - accuracy: 0.9924  .9874 - val_loss: 0.0359 - val_accuracy: 0.9872model-best/assets
+85/92 [==========================>...] - ETA: 0s - loss: 0.0199 - accuracy: 0.9922  .9874 - val_loss: 0.0359 - val_accuracy: 0.9872model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0225 - accuracy: 0.9911  .9874 - val_loss: 0.0359 - val_accuracy: 0.9872model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0225 - accuracy: 0.9911INFO:tensorflow:Assets written to: models/assets2model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0225 - accuracy: 0.9911INFO:tensorflow:Assets written to: models/assets2model-best/assets
+INFO:tensorflow:Assets written to: models/assets
+INFO:tensorflow:Assets written to: /home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best/assets
+INFO:tensorflow:Assets written to: /home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best/assets
+/home/alvaro/anaconda3/envs/tf-tfx/lib/python3.10/site-packages/keras/src/engine/training.py:3000: UserWarning: You are saving your model as an HDF5 file via `model.save()`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')`.
+  saving_api.save_model(
+INFO:tensorflow:Assets written to: /home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best/assets
+48/92 [==============>...............] - ETA: 5s - loss: 0.1301 - accuracy: 0.9648  .9911 - val_loss: 0.1363 - val_accuracy: 0.9489model-best/assets
+65/92 [====================>.........] - ETA: 3s - loss: 0.1084 - accuracy: 0.9680  .9911 - val_loss: 0.1363 - val_accuracy: 0.9489model-best/assets
+82/92 [=========================>....] - ETA: 1s - loss: 0.0977 - accuracy: 0.9701  .9911 - val_loss: 0.1363 - val_accuracy: 0.9489model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0919 - accuracy: 0.9710  .9911 - val_loss: 0.1363 - val_accuracy: 0.9489model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0919 - accuracy: 0.9710INFO:tensorflow:Assets written to: models/assets9model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0919 - accuracy: 0.9710INFO:tensorflow:Assets written to: models/assets9model-best/assets
+INFO:tensorflow:Assets written to: models/assets
+23/92 [======>.......................] - ETA: 7s - loss: 0.0421 - accuracy: 0.9837  .9710 - val_loss: 0.0414 - val_accuracy: 0.9815model-best/assets
+38/92 [===========>..................] - ETA: 6s - loss: 0.0323 - accuracy: 0.9877  .9710 - val_loss: 0.0414 - val_accuracy: 0.9815model-best/assets
+52/92 [===============>..............] - ETA: 4s - loss: 0.0282 - accuracy: 0.9892  .9710 - val_loss: 0.0414 - val_accuracy: 0.9815model-best/assets
+68/92 [=====================>........] - ETA: 2s - loss: 0.0261 - accuracy: 0.9894  .9710 - val_loss: 0.0414 - val_accuracy: 0.9815model-best/assets
+85/92 [==========================>...] - ETA: 0s - loss: 0.0259 - accuracy: 0.9893  .9710 - val_loss: 0.0414 - val_accuracy: 0.9815model-best/assets
+91/92 [============================>.] - ETA: 0s - loss: 0.0259 - accuracy: 0.9894  .9710 - val_loss: 0.0414 - val_accuracy: 0.9815model-best/assets
+91/92 [============================>.] - ETA: 0s - loss: 0.0259 - accuracy: 0.9894INFO:tensorflow:Assets written to: models/assets5model-best/assets
+91/92 [============================>.] - ETA: 0s - loss: 0.0259 - accuracy: 0.9894INFO:tensorflow:Assets written to: models/assets5model-best/assets
+INFO:tensorflow:Assets written to: models/assets
+Epoch 20/36==========================] - 19s 201ms/step - loss: 0.0258 - accuracy: 0.9894 - val_loss: 0.0221 - val_accuracy: 0.9901model-best/assets
+23/92 [======>.......................] - ETA: 8s - loss: 0.0555 - accuracy: 0.9878  .9894 - val_loss: 0.0221 - val_accuracy: 0.9901model-best/assets
+40/92 [============>.................] - ETA: 6s - loss: 0.0540 - accuracy: 0.9875  .9894 - val_loss: 0.0221 - val_accuracy: 0.9901model-best/assets
+54/92 [================>.............] - ETA: 4s - loss: 0.0578 - accuracy: 0.9838  .9894 - val_loss: 0.0221 - val_accuracy: 0.9901model-best/assets
+70/92 [=====================>........] - ETA: 2s - loss: 0.0504 - accuracy: 0.9843  .9894 - val_loss: 0.0221 - val_accuracy: 0.9901model-best/assets
+85/92 [==========================>...] - ETA: 0s - loss: 0.0463 - accuracy: 0.9856  .9894 - val_loss: 0.0221 - val_accuracy: 0.9901model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0435 - accuracy: 0.9867  .9894 - val_loss: 0.0221 - val_accuracy: 0.9901model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0435 - accuracy: 0.9867INFO:tensorflow:Assets written to: models/assets1model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0435 - accuracy: 0.9867INFO:tensorflow:Assets written to: models/assets1model-best/assets
+INFO:tensorflow:Assets written to: models/assets
+19/92 [=====>........................] - ETA: 7s - loss: 0.0099 - accuracy: 0.9967  .9867 - val_loss: 0.0166 - val_accuracy: 0.9957model-best/assets
+37/92 [===========>..................] - ETA: 5s - loss: 0.0087 - accuracy: 0.9966  .9867 - val_loss: 0.0166 - val_accuracy: 0.9957model-best/assets
+55/92 [================>.............] - ETA: 3s - loss: 0.0132 - accuracy: 0.9943  .9867 - val_loss: 0.0166 - val_accuracy: 0.9957model-best/assets
+72/92 [======================>.......] - ETA: 2s - loss: 0.0171 - accuracy: 0.9934  .9867 - val_loss: 0.0166 - val_accuracy: 0.9957model-best/assets
+86/92 [===========================>..] - ETA: 0s - loss: 0.0181 - accuracy: 0.9927  .9867 - val_loss: 0.0166 - val_accuracy: 0.9957model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0199 - accuracy: 0.9925  .9867 - val_loss: 0.0166 - val_accuracy: 0.9957model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0199 - accuracy: 0.9925INFO:tensorflow:Assets written to: models/assets7model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0199 - accuracy: 0.9925INFO:tensorflow:Assets written to: models/assets7model-best/assets
+INFO:tensorflow:Assets written to: models/assets
+INFO:tensorflow:Assets written to: /home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best/assets
+INFO:tensorflow:Assets written to: /home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best/assets
+/home/alvaro/anaconda3/envs/tf-tfx/lib/python3.10/site-packages/keras/src/engine/training.py:3000: UserWarning: You are saving your model as an HDF5 file via `model.save()`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')`.
+  saving_api.save_model(
+INFO:tensorflow:Assets written to: /home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best/assets
+42/92 [============>.................] - ETA: 5s - loss: 0.0547 - accuracy: 0.9851  .9925 - val_loss: 0.0695 - val_accuracy: 0.9716model-best/assets
+60/92 [==================>...........] - ETA: 3s - loss: 0.0436 - accuracy: 0.9874  .9925 - val_loss: 0.0695 - val_accuracy: 0.9716model-best/assets
+76/92 [=======================>......] - ETA: 1s - loss: 0.0397 - accuracy: 0.9884  .9925 - val_loss: 0.0695 - val_accuracy: 0.9716model-best/assets
+88/92 [===========================>..] - ETA: 0s - loss: 0.0367 - accuracy: 0.9893  .9925 - val_loss: 0.0695 - val_accuracy: 0.9716model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0353 - accuracy: 0.9898  .9925 - val_loss: 0.0695 - val_accuracy: 0.9716model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0353 - accuracy: 0.9898INFO:tensorflow:Assets written to: models/assets6model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0353 - accuracy: 0.9898INFO:tensorflow:Assets written to: models/assets6model-best/assets
+INFO:tensorflow:Assets written to: models/assets
+
+ 8/92 [=>............................] - ETA: 6s - loss: 0.0158 - accuracy: 0.9961  .9898 - val_loss: 0.0055 - val_accuracy: 1.0000model-best/assets
+28/92 [========>.....................] - ETA: 6s - loss: 0.0096 - accuracy: 0.9989  .9898 - val_loss: 0.0055 - val_accuracy: 1.0000model-best/assets
+45/92 [=============>................] - ETA: 5s - loss: 0.0116 - accuracy: 0.9972  .9898 - val_loss: 0.0055 - val_accuracy: 1.0000model-best/assets
+58/92 [=================>............] - ETA: 3s - loss: 0.0099 - accuracy: 0.9978  .9898 - val_loss: 0.0055 - val_accuracy: 1.0000model-best/assets
+73/92 [======================>.......] - ETA: 2s - loss: 0.0103 - accuracy: 0.9974  .9898 - val_loss: 0.0055 - val_accuracy: 1.0000model-best/assets
+89/92 [============================>.] - ETA: 0s - loss: 0.0095 - accuracy: 0.9975  .9898 - val_loss: 0.0055 - val_accuracy: 1.0000model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0094 - accuracy: 0.9976  .9898 - val_loss: 0.0055 - val_accuracy: 1.0000model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0094 - accuracy: 0.9976INFO:tensorflow:Assets written to: models/assets0model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0094 - accuracy: 0.9976INFO:tensorflow:Assets written to: models/assets0model-best/assets
+INFO:tensorflow:Assets written to: models/assets
+[34m[1mwandb[39m[22m: Adding directory to artifact (./models)... Done. 0.0s
+/home/alvaro/anaconda3/envs/tf-tfx/lib/python3.10/site-packages/keras/src/engine/training.py:3000: UserWarning: You are saving your model as an HDF5 file via `model.save()`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')`.
+  saving_api.save_model(
+INFO:tensorflow:Assets written to: /home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best/assets
+INFO:tensorflow:Assets written to: /home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best/assets
+21/92 [=====>........................] - ETA: 8s - loss: 0.0058 - accuracy: 0.9970  .9976 - val_loss: 0.0191 - val_accuracy: 0.9943model-best/assets
+40/92 [============>.................] - ETA: 5s - loss: 0.0204 - accuracy: 0.9897  .9976 - val_loss: 0.0191 - val_accuracy: 0.9943model-best/assets
+57/92 [=================>............] - ETA: 4s - loss: 0.0224 - accuracy: 0.9895  .9976 - val_loss: 0.0191 - val_accuracy: 0.9943model-best/assets
+73/92 [======================>.......] - ETA: 2s - loss: 0.0216 - accuracy: 0.9909  .9976 - val_loss: 0.0191 - val_accuracy: 0.9943model-best/assets
+88/92 [===========================>..] - ETA: 0s - loss: 0.0207 - accuracy: 0.9914  .9976 - val_loss: 0.0191 - val_accuracy: 0.9943model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0202 - accuracy: 0.9918  .9976 - val_loss: 0.0191 - val_accuracy: 0.9943model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0202 - accuracy: 0.9918INFO:tensorflow:Assets written to: models/assets3model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0202 - accuracy: 0.9918INFO:tensorflow:Assets written to: models/assets3model-best/assets
+INFO:tensorflow:Assets written to: models/assets
+10/92 [==>...........................] - ETA: 7s - loss: 0.0161 - accuracy: 0.9906  .9918 - val_loss: 0.0274 - val_accuracy: 0.9886model-best/assets
+28/92 [========>.....................] - ETA: 7s - loss: 0.0231 - accuracy: 0.9886  .9918 - val_loss: 0.0274 - val_accuracy: 0.9886model-best/assets
+44/92 [=============>................] - ETA: 5s - loss: 0.0226 - accuracy: 0.9899  .9918 - val_loss: 0.0274 - val_accuracy: 0.9886model-best/assets
+61/92 [==================>...........] - ETA: 3s - loss: 0.0212 - accuracy: 0.9917  .9918 - val_loss: 0.0274 - val_accuracy: 0.9886model-best/assets
+74/92 [=======================>......] - ETA: 2s - loss: 0.0221 - accuracy: 0.9911  .9918 - val_loss: 0.0274 - val_accuracy: 0.9886model-best/assets
+87/92 [===========================>..] - ETA: 0s - loss: 0.0215 - accuracy: 0.9917  .9918 - val_loss: 0.0274 - val_accuracy: 0.9886model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0212 - accuracy: 0.9918  .9918 - val_loss: 0.0274 - val_accuracy: 0.9886model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0212 - accuracy: 0.9918  .9918 - val_loss: 0.0274 - val_accuracy: 0.9886model-best/assets
+INFO:tensorflow:Assets written to: models/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0212 - accuracy: 0.9918INFO:tensorflow:Assets written to: models/assets6model-best/assets
+11/92 [==>...........................] - ETA: 9s - loss: 0.0057 - accuracy: 1.0000  .9918 - val_loss: 0.0167 - val_accuracy: 0.9943model-best/assets
+28/92 [========>.....................] - ETA: 7s - loss: 0.0169 - accuracy: 0.9967  .9918 - val_loss: 0.0167 - val_accuracy: 0.9943model-best/assets
+45/92 [=============>................] - ETA: 5s - loss: 0.0276 - accuracy: 0.9931  .9918 - val_loss: 0.0167 - val_accuracy: 0.9943model-best/assets
+61/92 [==================>...........] - ETA: 3s - loss: 0.0290 - accuracy: 0.9917  .9918 - val_loss: 0.0167 - val_accuracy: 0.9943model-best/assets
+76/92 [=======================>......] - ETA: 1s - loss: 0.0358 - accuracy: 0.9913  .9918 - val_loss: 0.0167 - val_accuracy: 0.9943model-best/assets
+89/92 [============================>.] - ETA: 0s - loss: 0.0342 - accuracy: 0.9912  .9918 - val_loss: 0.0167 - val_accuracy: 0.9943model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0335 - accuracy: 0.9915  .9918 - val_loss: 0.0167 - val_accuracy: 0.9943model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0335 - accuracy: 0.9915INFO:tensorflow:Assets written to: models/assets3model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0335 - accuracy: 0.9915INFO:tensorflow:Assets written to: models/assets3model-best/assets
+INFO:tensorflow:Assets written to: models/assets
+12/92 [==>...........................] - ETA: 8s - loss: 0.0037 - accuracy: 1.0000  .9915 - val_loss: 0.0101 - val_accuracy: 0.9957model-best/assets
+26/92 [=======>......................] - ETA: 8s - loss: 0.0039 - accuracy: 0.9988  .9915 - val_loss: 0.0101 - val_accuracy: 0.9957model-best/assets
+43/92 [=============>................] - ETA: 5s - loss: 0.0079 - accuracy: 0.9963  .9915 - val_loss: 0.0101 - val_accuracy: 0.9957model-best/assets
+58/92 [=================>............] - ETA: 4s - loss: 0.0086 - accuracy: 0.9967  .9915 - val_loss: 0.0101 - val_accuracy: 0.9957model-best/assets
+73/92 [======================>.......] - ETA: 2s - loss: 0.0071 - accuracy: 0.9974  .9915 - val_loss: 0.0101 - val_accuracy: 0.9957model-best/assets
+87/92 [===========================>..] - ETA: 0s - loss: 0.0079 - accuracy: 0.9964  .9915 - val_loss: 0.0101 - val_accuracy: 0.9957model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0076 - accuracy: 0.9966  .9915 - val_loss: 0.0101 - val_accuracy: 0.9957model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0076 - accuracy: 0.9966INFO:tensorflow:Assets written to: models/assets7model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0076 - accuracy: 0.9966INFO:tensorflow:Assets written to: models/assets7model-best/assets
+INFO:tensorflow:Assets written to: models/assets
+13/92 [===>..........................] - ETA: 7s - loss: 0.0046 - accuracy: 1.0000  .9966 - val_loss: 0.0053 - val_accuracy: 0.9972model-best/assets
+29/92 [========>.....................] - ETA: 7s - loss: 0.0172 - accuracy: 0.9934  .9966 - val_loss: 0.0053 - val_accuracy: 0.9972model-best/assets
+43/92 [=============>................] - ETA: 6s - loss: 0.0172 - accuracy: 0.9926  .9966 - val_loss: 0.0053 - val_accuracy: 0.9972model-best/assets
+59/92 [==================>...........] - ETA: 4s - loss: 0.0204 - accuracy: 0.9920  .9966 - val_loss: 0.0053 - val_accuracy: 0.9972model-best/assets
+74/92 [=======================>......] - ETA: 2s - loss: 0.0224 - accuracy: 0.9915  .9966 - val_loss: 0.0053 - val_accuracy: 0.9972model-best/assets
+87/92 [===========================>..] - ETA: 0s - loss: 0.0205 - accuracy: 0.9920  .9966 - val_loss: 0.0053 - val_accuracy: 0.9972model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0225 - accuracy: 0.9915  .9966 - val_loss: 0.0053 - val_accuracy: 0.9972model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0225 - accuracy: 0.9915INFO:tensorflow:Assets written to: models/assets2model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0225 - accuracy: 0.9915INFO:tensorflow:Assets written to: models/assets2model-best/assets
+INFO:tensorflow:Assets written to: models/assets
+12/92 [==>...........................] - ETA: 6s - loss: 0.0730 - accuracy: 0.9782      5 - val_loss: 0.0054 - val_accuracy: 0.9972model-best/assets
+29/92 [========>.....................] - ETA: 6s - loss: 0.0406 - accuracy: 0.9879      5 - val_loss: 0.0054 - val_accuracy: 0.9972model-best/assets
+43/92 [=============>................] - ETA: 5s - loss: 0.0459 - accuracy: 0.9845      5 - val_loss: 0.0054 - val_accuracy: 0.9972model-best/assets
+57/92 [=================>............] - ETA: 4s - loss: 0.0456 - accuracy: 0.9856      5 - val_loss: 0.0054 - val_accuracy: 0.9972model-best/assets
+71/92 [======================>.......] - ETA: 2s - loss: 0.0463 - accuracy: 0.9845      5 - val_loss: 0.0054 - val_accuracy: 0.9972model-best/assets
+87/92 [===========================>..] - ETA: 0s - loss: 0.0466 - accuracy: 0.9841      5 - val_loss: 0.0054 - val_accuracy: 0.9972model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0463 - accuracy: 0.9843      5 - val_loss: 0.0054 - val_accuracy: 0.9972model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0463 - accuracy: 0.9843INFO:tensorflow:Assets written to: models/assets2model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0463 - accuracy: 0.9843INFO:tensorflow:Assets written to: models/assets2model-best/assets
+INFO:tensorflow:Assets written to: models/assets
+10/92 [==>...........................] - ETA: 8s - loss: 0.0095 - accuracy: 0.9937  .9843 - val_loss: 0.0216 - val_accuracy: 0.9957model-best/assets
+25/92 [=======>......................] - ETA: 8s - loss: 0.0123 - accuracy: 0.9950  .9843 - val_loss: 0.0216 - val_accuracy: 0.9957model-best/assets
+41/92 [============>.................] - ETA: 6s - loss: 0.0167 - accuracy: 0.9931  .9843 - val_loss: 0.0216 - val_accuracy: 0.9957model-best/assets
+55/92 [================>.............] - ETA: 4s - loss: 0.0161 - accuracy: 0.9937  .9843 - val_loss: 0.0216 - val_accuracy: 0.9957model-best/assets
+72/92 [======================>.......] - ETA: 2s - loss: 0.0138 - accuracy: 0.9948  .9843 - val_loss: 0.0216 - val_accuracy: 0.9957model-best/assets
+87/92 [===========================>..] - ETA: 0s - loss: 0.0151 - accuracy: 0.9949  .9843 - val_loss: 0.0216 - val_accuracy: 0.9957model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0146 - accuracy: 0.9952  .9843 - val_loss: 0.0216 - val_accuracy: 0.9957model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0146 - accuracy: 0.9952INFO:tensorflow:Assets written to: models/assets7model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0146 - accuracy: 0.9952INFO:tensorflow:Assets written to: models/assets7model-best/assets
+INFO:tensorflow:Assets written to: models/assets
+45/92 [=============>................] - ETA: 5s - loss: 0.0033 - accuracy: 0.9993      2 - val_loss: 0.0049 - val_accuracy: 0.9986model-best/assets
+61/92 [==================>...........] - ETA: 3s - loss: 0.0033 - accuracy: 0.9990      2 - val_loss: 0.0049 - val_accuracy: 0.9986model-best/assets
+76/92 [=======================>......] - ETA: 1s - loss: 0.0028 - accuracy: 0.9992      2 - val_loss: 0.0049 - val_accuracy: 0.9986model-best/assets
+89/92 [============================>.] - ETA: 0s - loss: 0.0025 - accuracy: 0.9993      2 - val_loss: 0.0049 - val_accuracy: 0.9986model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0024 - accuracy: 0.9993      2 - val_loss: 0.0049 - val_accuracy: 0.9986model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0024 - accuracy: 0.9993INFO:tensorflow:Assets written to: models/assets6model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0024 - accuracy: 0.9993INFO:tensorflow:Assets written to: models/assets6model-best/assets
+INFO:tensorflow:Assets written to: models/assets
+INFO:tensorflow:Assets written to: /home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best/assets
+INFO:tensorflow:Assets written to: /home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best/assets
+/home/alvaro/anaconda3/envs/tf-tfx/lib/python3.10/site-packages/keras/src/engine/training.py:3000: UserWarning: You are saving your model as an HDF5 file via `model.save()`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')`.
+  saving_api.save_model(
+INFO:tensorflow:Assets written to: /home/alvaro/Documents/JupyterLab1/DeepLearningProject/wandb/run-20240107_172545-g9ewqfjl/files/model-best/assets
+38/92 [===========>..................] - ETA: 6s - loss: 0.0025 - accuracy: 1.0000     93 - val_loss: 0.0021 - val_accuracy: 0.9986model-best/assets
+53/92 [================>.............] - ETA: 4s - loss: 0.0024 - accuracy: 1.0000     93 - val_loss: 0.0021 - val_accuracy: 0.9986model-best/assets
+68/92 [=====================>........] - ETA: 3s - loss: 0.0035 - accuracy: 0.9995     93 - val_loss: 0.0021 - val_accuracy: 0.9986model-best/assets
+82/92 [=========================>....] - ETA: 1s - loss: 0.0049 - accuracy: 0.9992     93 - val_loss: 0.0021 - val_accuracy: 0.9986model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0047 - accuracy: 0.9990     93 - val_loss: 0.0021 - val_accuracy: 0.9986model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0047 - accuracy: 0.9990INFO:tensorflow:Assets written to: models/assets6model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0047 - accuracy: 0.9990INFO:tensorflow:Assets written to: models/assets6model-best/assets
+INFO:tensorflow:Assets written to: models/assets
+19/92 [=====>........................] - ETA: 7s - loss: 0.0657 - accuracy: 0.9786      0 - val_loss: 0.0063 - val_accuracy: 0.9986model-best/assets
+35/92 [==========>...................] - ETA: 6s - loss: 0.0598 - accuracy: 0.9804      0 - val_loss: 0.0063 - val_accuracy: 0.9986model-best/assets
+47/92 [==============>...............] - ETA: 5s - loss: 0.0533 - accuracy: 0.9827      0 - val_loss: 0.0063 - val_accuracy: 0.9986model-best/assets
+63/92 [===================>..........] - ETA: 3s - loss: 0.0483 - accuracy: 0.9831      0 - val_loss: 0.0063 - val_accuracy: 0.9986model-best/assets
+77/92 [========================>.....] - ETA: 1s - loss: 0.0467 - accuracy: 0.9830      0 - val_loss: 0.0063 - val_accuracy: 0.9986model-best/assets
+90/92 [============================>.] - ETA: 0s - loss: 0.0425 - accuracy: 0.9846      0 - val_loss: 0.0063 - val_accuracy: 0.9986model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0416 - accuracy: 0.9850      0 - val_loss: 0.0063 - val_accuracy: 0.9986model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0416 - accuracy: 0.9850INFO:tensorflow:Assets written to: models/assets6model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0416 - accuracy: 0.9850INFO:tensorflow:Assets written to: models/assets6model-best/assets
+INFO:tensorflow:Assets written to: models/assets
+ 9/92 [=>............................] - ETA: 6s - loss: 0.0069 - accuracy: 0.9965  .9850 - val_loss: 0.0150 - val_accuracy: 0.9901model-best/assets
+28/92 [========>.....................] - ETA: 6s - loss: 0.0124 - accuracy: 0.9943  .9850 - val_loss: 0.0150 - val_accuracy: 0.9901model-best/assets
+44/92 [=============>................] - ETA: 5s - loss: 0.0123 - accuracy: 0.9935  .9850 - val_loss: 0.0150 - val_accuracy: 0.9901model-best/assets
+61/92 [==================>...........] - ETA: 3s - loss: 0.0157 - accuracy: 0.9928  .9850 - val_loss: 0.0150 - val_accuracy: 0.9901model-best/assets
+77/92 [========================>.....] - ETA: 1s - loss: 0.0152 - accuracy: 0.9935  .9850 - val_loss: 0.0150 - val_accuracy: 0.9901model-best/assets
+90/92 [============================>.] - ETA: 0s - loss: 0.0141 - accuracy: 0.9941  .9850 - val_loss: 0.0150 - val_accuracy: 0.9901model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0143 - accuracy: 0.9939  .9850 - val_loss: 0.0150 - val_accuracy: 0.9901model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0143 - accuracy: 0.9939INFO:tensorflow:Assets written to: models/assets1model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0143 - accuracy: 0.9939INFO:tensorflow:Assets written to: models/assets1model-best/assets
+INFO:tensorflow:Assets written to: models/assets
+17/92 [====>.........................] - ETA: 8s - loss: 0.0417 - accuracy: 0.9853  .9939 - val_loss: 0.0032 - val_accuracy: 1.0000model-best/assets
+35/92 [==========>...................] - ETA: 6s - loss: 0.0400 - accuracy: 0.9884  .9939 - val_loss: 0.0032 - val_accuracy: 1.0000model-best/assets
+48/92 [==============>...............] - ETA: 5s - loss: 0.0342 - accuracy: 0.9896  .9939 - val_loss: 0.0032 - val_accuracy: 1.0000model-best/assets
+63/92 [===================>..........] - ETA: 3s - loss: 0.0333 - accuracy: 0.9891  .9939 - val_loss: 0.0032 - val_accuracy: 1.0000model-best/assets
+76/92 [=======================>......] - ETA: 2s - loss: 0.0295 - accuracy: 0.9901  .9939 - val_loss: 0.0032 - val_accuracy: 1.0000model-best/assets
+90/92 [============================>.] - ETA: 0s - loss: 0.0259 - accuracy: 0.9916  .9939 - val_loss: 0.0032 - val_accuracy: 1.0000model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0253 - accuracy: 0.9918  .9939 - val_loss: 0.0032 - val_accuracy: 1.0000model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0253 - accuracy: 0.9918INFO:tensorflow:Assets written to: models/assets0model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0253 - accuracy: 0.9918INFO:tensorflow:Assets written to: models/assets0model-best/assets
+INFO:tensorflow:Assets written to: models/assets
+15/92 [===>..........................] - ETA: 8s - loss: 0.0015 - accuracy: 1.0000      8 - val_loss: 0.0034 - val_accuracy: 1.0000model-best/assets
+32/92 [=========>....................] - ETA: 6s - loss: 0.0022 - accuracy: 0.9990      8 - val_loss: 0.0034 - val_accuracy: 1.0000model-best/assets
+49/92 [==============>...............] - ETA: 4s - loss: 0.0035 - accuracy: 0.9987      8 - val_loss: 0.0034 - val_accuracy: 1.0000model-best/assets
+62/92 [===================>..........] - ETA: 3s - loss: 0.0034 - accuracy: 0.9990      8 - val_loss: 0.0034 - val_accuracy: 1.0000model-best/assets
+77/92 [========================>.....] - ETA: 1s - loss: 0.0054 - accuracy: 0.9988      8 - val_loss: 0.0034 - val_accuracy: 1.0000model-best/assets
+90/92 [============================>.] - ETA: 0s - loss: 0.0047 - accuracy: 0.9990      8 - val_loss: 0.0034 - val_accuracy: 1.0000model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0046 - accuracy: 0.9990      8 - val_loss: 0.0034 - val_accuracy: 1.0000model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0046 - accuracy: 0.9990INFO:tensorflow:Assets written to: models/assets0model-best/assets
+92/92 [==============================] - ETA: 0s - loss: 0.0046 - accuracy: 0.9990INFO:tensorflow:Assets written to: models/assets0model-best/assets
+INFO:tensorflow:Assets written to: models/assets
+92/92 [==============================] - 19s 200ms/step - loss: 0.0046 - accuracy: 0.9990 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+First Image to predict===============] - 19s 200ms/step - loss: 0.0046 - accuracy: 0.9990 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+First Image to predict===============] - 19s 200ms/step - loss: 0.0046 - accuracy: 0.9990 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+Predicted Label:  healthy==========] - 0s 47ms/stepstep - loss: 0.0046 - accuracy: 0.9990 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+First Image to predictthy==========] - 0s 47ms/stepstep - loss: 0.0046 - accuracy: 0.9990 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+First Image to predictthy==========] - 0s 47ms/stepstep - loss: 0.0046 - accuracy: 0.9990 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+First Image to predictthy==========] - 0s 47ms/stepstep - loss: 0.0046 - accuracy: 0.9990 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+Predicted Label:  black rot========] - 0s 32ms/stepstep - loss: 0.0046 - accuracy: 0.9990 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+Actual label:  esca (black measles)] - 0s 32ms/stepstep - loss: 0.0046 - accuracy: 0.9990 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+Predicted Label:  black rot========] - 0s 28ms/stepstep - loss: 0.0046 - accuracy: 0.9990 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+Predicted Label:  esca (black measles) 0s 29ms/stepstep - loss: 0.0046 - accuracy: 0.9990 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+Predicted Label:  black rot========] - 0s 29ms/stepstep - loss: 0.0046 - accuracy: 0.9990 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+1/1 [==============================] - 0s 29ms/stepstep - loss: 0.0046 - accuracy: 0.9990 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+Predicted Label:  leaf blight (isariopsis leaf spot)tep - loss: 0.0046 - accuracy: 0.9990 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+First Image to predict blight (isariopsis leaf spot)tep - loss: 0.0046 - accuracy: 0.9990 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+Actual label:  black rotlight (isariopsis leaf spot)tep - loss: 0.0046 - accuracy: 0.9990 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+Actual label:  black rotlight (isariopsis leaf spot)tep - loss: 0.0046 - accuracy: 0.9990 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+Predicted Label:  esca (black measles) 0s 53ms/step)tep - loss: 0.0046 - accuracy: 0.9990 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+First Image to predict (black measles) 0s 53ms/step)tep - loss: 0.0046 - accuracy: 0.9990 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+First Image to predict (black measles) 0s 53ms/step)tep - loss: 0.0046 - accuracy: 0.9990 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+First Image to predict (black measles) 0s 53ms/step)tep - loss: 0.0046 - accuracy: 0.9990 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+First Image to predict (black measles) 0s 53ms/step)tep - loss: 0.0046 - accuracy: 0.9990 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+First Image to predict (black measles) 0s 53ms/step)tep - loss: 0.0046 - accuracy: 0.9990 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+First Image to predict (black measles) 0s 53ms/step)tep - loss: 0.0046 - accuracy: 0.9990 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+First Image to predict (black measles) 0s 53ms/step)tep - loss: 0.0046 - accuracy: 0.9990 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+First Image to predict (black measles) 0s 53ms/step)tep - loss: 0.0046 - accuracy: 0.9990 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+First Image to predict (black measles) 0s 53ms/step)tep - loss: 0.0046 - accuracy: 0.9990 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+First Image to predict (black measles) 0s 53ms/step)tep - loss: 0.0046 - accuracy: 0.9990 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+First Image to predict (black measles) 0s 53ms/step)tep - loss: 0.0046 - accuracy: 0.9990 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+First Image to predict (black measles) 0s 53ms/step)tep - loss: 0.0046 - accuracy: 0.9990 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+Predicted Label:  black rot========] - 0s 30ms/step)tep - loss: 0.0046 - accuracy: 0.9990 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+Predicted Label:  black rot========] - 0s 26ms/step)tep - loss: 0.0046 - accuracy: 0.9990 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+Predicted Label:  leaf blight (isariopsis leaf spot)tep - loss: 0.0046 - accuracy: 0.9990 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+Predicted Label:  esca (black measles) 0s 36ms/step)tep - loss: 0.0046 - accuracy: 0.9990 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+Predicted Label:  healthy==========] - 0s 37ms/step)tep - loss: 0.0046 - accuracy: 0.9990 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+Predicted Label:  esca (black measles) 0s 62ms/step)tep - loss: 0.0046 - accuracy: 0.9990 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+Predicted Label:  black rot========] - 0s 26ms/step)tep - loss: 0.0046 - accuracy: 0.9990 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+Predicted Label:  black rot========] - 0s 36ms/step)tep - loss: 0.0046 - accuracy: 0.9990 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+Predicted Label:  black rot========] - 0s 29ms/step)tep - loss: 0.0046 - accuracy: 0.9990 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+ 4/13 [========>.....................] - ETA: 2s - loss: 0.0100 - accuracy: 0.9922 0.9990 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+11/13 [========================>.....] - ETA: 0s - loss: 0.0043 - accuracy: 0.9972 0.9990 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+13/13 [==============================] - 4s 279ms/step - loss: 0.0038 - accuracy: 0.99750 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets
+13/13 [==============================] - 4s 279ms/step - loss: 0.0038 - accuracy: 0.99750 - val_loss: 0.0012 - val_accuracy: 1.0000model-best/assets

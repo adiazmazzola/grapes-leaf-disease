@@ -1,0 +1,127 @@
+{
+    "os": "Linux-6.2.0-39-generic-x86_64-with-glibc2.35",
+    "python": "3.10.13",
+    "heartbeatAt": "2024-01-07T16:25:45.835050",
+    "startedAt": "2024-01-07T16:25:45.006234",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "Documents/JupyterLab1/DeepLearningProject/grapes-tf-tfx-kfp.ipynb",
+    "codePathLocal": null,
+    "root": "/home/alvaro/Documents/JupyterLab1/DeepLearningProject",
+    "git": {
+        "remote": null,
+        "commit": null
+    },
+    "email": "adiazmazzola@gmail.com",
+    "host": "adm-bfog",
+    "username": "alvaro",
+    "executable": "/home/alvaro/anaconda3/envs/tf-tfx/bin/python",
+    "cpu_count": 8,
+    "cpu_count_logical": 16,
+    "cpu_freq": {
+        "current": 1853.9735625,
+        "min": 1400.0,
+        "max": 2900.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 1211.953,
+            "min": 1400.0,
+            "max": 2900.0
+        },
+        {
+            "current": 1211.834,
+            "min": 1400.0,
+            "max": 2900.0
+        },
+        {
+            "current": 1250.722,
+            "min": 1400.0,
+            "max": 2900.0
+        },
+        {
+            "current": 1463.333,
+            "min": 1400.0,
+            "max": 2900.0
+        },
+        {
+            "current": 1695.634,
+            "min": 1400.0,
+            "max": 2900.0
+        },
+        {
+            "current": 1696.876,
+            "min": 1400.0,
+            "max": 2900.0
+        },
+        {
+            "current": 1400.0,
+            "min": 1400.0,
+            "max": 2900.0
+        },
+        {
+            "current": 1212.066,
+            "min": 1400.0,
+            "max": 2900.0
+        },
+        {
+            "current": 1400.352,
+            "min": 1400.0,
+            "max": 2900.0
+        },
+        {
+            "current": 1400.0,
+            "min": 1400.0,
+            "max": 2900.0
+        },
+        {
+            "current": 1408.617,
+            "min": 1400.0,
+            "max": 2900.0
+        },
+        {
+            "current": 1907.285,
+            "min": 1400.0,
+            "max": 2900.0
+        },
+        {
+            "current": 1561.219,
+            "min": 1400.0,
+            "max": 2900.0
+        },
+        {
+            "current": 1400.0,
+            "min": 1400.0,
+            "max": 2900.0
+        },
+        {
+            "current": 2473.917,
+            "min": 1400.0,
+            "max": 2900.0
+        },
+        {
+            "current": 4162.756,
+            "min": 1400.0,
+            "max": 2900.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 467.8876266479492,
+            "used": 174.40970611572266
+        }
+    },
+    "gpu": "NVIDIA GeForce GTX 1650 Ti",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce GTX 1650 Ti",
+            "memory_total": 4294967296
+        }
+    ],
+    "memory": {
+        "total": 30.76313018798828
+    }
+}
